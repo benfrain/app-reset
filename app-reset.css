@@ -1,0 +1,93 @@
+/*
+App reset by Ben Frain @benfrain / benfrain.com
+
+Latest: https://github.com/benfrain/app-reset
+
+An opinionated set of resets suitable for building web applications.
+
+These resets target HTML elements that typically receive defaults I'm not fond of by User Agents. Be aware that some of these resets have a negative impact on the default usability of a web page. Therefore, ensure you add an equivalent style back that matches your project aesthetic.
+
+You'll want to run this through Autoprefixer (https://github.com/postcss/autoprefixer) for production. Only essential prefixes are added here (e.g. proprietary property value pairs) and you'll need to set prefixing relative to your browser support matrix.
+
+*/
+
+/*Yes, the universal selector. No, it isn't slow: http://benfrain.com/css-performance-revisited-selectors-bloat-expensive-styles/*/
+* {
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+    /*Older Androids need this instead*/
+    -webkit-tap-highlight-color: transparent;
+    /*Not everything needs this but most devs find border-box easier to reason about. @thierrykoblentz wouldn't approve. Sorry Thierry ;)*/
+    box-sizing: border-box;
+}
+
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    /*We will be adding our own margin to these elements as needed.*/
+    margin: 0;
+    /*You'll want to set font-size as needed.*/
+    font-size: 1rem;
+    /*No bold for h tags unless you want it*/
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*Mozilla adds a dotted outline around a tags when they receive tab focus. This removes it*/
+a:focus {
+    outline: 0;
+}
+
+/*You may well want to comment this one out. I'd rather have all divs default to flex for apps but that might not work for you*/
+div {
+    display: flex;
+}
+
+/*As the rule above, I like all spans and a tags to default to inline-flex. Your mileage may vary*/
+span,
+a {
+    display: inline-flex;
+}
+
+input,
+fieldset {
+    appearance: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    /*inputs and fieldset defaults to having a min-width equal to its content in Chrome and Firefox (https://code.google.com/p/chromium/issues/detail?id=560762), we may not want that*/
+    min-width: 0;
+    /*Reset the font size and family*/
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+/*This switches the default outline off when an input receives focus (really important for users tabbing through with a keyboard) so ensure you put something decent in for your input focus instead!!*/
+input:focus {
+    outline: 0;
+}
+
+input[type="number"] {
+    /*Mozilla shows the spinner UI on number inputs unless we use this:*/
+    -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    appearance: none;
+
+}
