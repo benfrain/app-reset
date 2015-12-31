@@ -96,3 +96,10 @@ input[type="number"]::-webkit-outer-spin-button {
 svg {
     display: inline-block;
 }
+
+img {
+    /*Want these to behave responsively.*/
+    max-width: 100%;
+    /*Default for images is inline, I rarely want images to be inline by default*/
+    display: block;
+}
