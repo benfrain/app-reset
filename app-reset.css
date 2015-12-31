@@ -91,3 +91,8 @@ input[type="number"]::-webkit-outer-spin-button {
     appearance: none;
 
 }
+
+/*SVG defaults to inline display which I dislike*/
+svg {
+    display: inline-block;
+}
