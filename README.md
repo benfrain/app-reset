@@ -7,4 +7,4 @@ Every time I make something 'appy' I have to switch off or reset a bunch of user
 App-reset is intended specifically for web applications.
 
 ###
-Suggestions? @benfrain / https://benfrain.com
+Suggestions? Comment or open an issue or find me at https:twitter.com/benfrain or https://benfrain.com

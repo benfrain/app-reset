@@ -11,9 +11,10 @@ You'll want to run this through Autoprefixer (https://github.com/postcss/autopre
 
 */
 
-/*Yes, the universal selector. No, it isn't slow: http://benfrain.com/css-performance-revisited-selectors-bloat-expensive-styles/*/
+/*Yes, the universal selector. No, it isn't slow: https://benfrain.com/css-performance-revisited-selectors-bloat-expensive-styles/*/
 * {
     user-select: none;
+    /*This gets -webkit specific prefix as it is a non W3C property*/
     -webkit-tap-highlight-color: rgba(255,255,255,0);
     /*Older Androids need this instead*/
     -webkit-tap-highlight-color: transparent;
@@ -47,12 +48,12 @@ a {
     color: inherit;
 }
 
-/*Mozilla adds a dotted outline around a tags when they receive tab focus. This removes it*/
+/*Mozilla adds a dotted outline around a tags when they receive tab focus. This removes it. Be aware this is a backwards accessibilty step!*/
 a:focus {
     outline: 0;
 }
 
-/*You may well want to comment this one out. I'd rather have all divs default to flex for apps but that might not work for you*/
+/*You may want to comment this one out. I'd rather have all divs default to flex for apps but that might not work for you*/
 div {
     display: flex;
 }
@@ -86,10 +87,10 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 
+/*Removes the little spinner controls for number type inputs (WebKit browsers/forks only)*/
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     appearance: none;
-
 }
 
 /*SVG defaults to inline display which I dislike*/
@@ -98,8 +99,8 @@ svg {
 }
 
 img {
-    /*Want these to behave responsively.*/
+    /*Make images behave responsively. Here they will scale up to 100% of their natural size*/
     max-width: 100%;
-    /*Default for images is inline, I rarely want images to be inline by default*/
+    /*Make images display as a block (UA default is usually inline)*/
     display: block;
 }
