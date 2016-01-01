@@ -13,6 +13,7 @@ You'll want to run this through Autoprefixer (https://github.com/postcss/autopre
 
 /*Yes, the universal selector. No, it isn't slow: https://benfrain.com/css-performance-revisited-selectors-bloat-expensive-styles/*/
 * {
+    /*This prevents users being able to select text. Stops long presses in iOS bringing up copy/paste UI for example*/
     user-select: none;
     /*This gets -webkit specific prefix as it is a non W3C property*/
     -webkit-tap-highlight-color: rgba(255,255,255,0);
