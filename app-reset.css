@@ -5,9 +5,12 @@ Latest: https://github.com/benfrain/app-reset
 
 An opinionated set of resets suitable for building web applications.
 
-These resets target HTML elements that typically receive defaults I'm not fond of by User Agents. Be aware that some of these resets have a negative impact on the default usability of a web page. Therefore, ensure you add an equivalent style back that matches your project aesthetic.
+## Accessibility Notes
+These resets target HTML elements that typically receive styling defaults by User Agents that I always need to 'undo'.
 
-You'll want to run this through Autoprefixer (https://github.com/postcss/autoprefixer) for production. Only essential prefixes are added here (e.g. proprietary property value pairs) and you'll need to set prefixing relative to your browser support matrix.
+Be aware that some of these resets have a negative impact on the default usability and accessibility of a web page. Therefore, ensure you add an equivalent accessible style back that matches your project aesthetic.
+
+## You'll want to run this through Autoprefixer You'll typically need to run this through (https://github.com/postcss/autoprefixer) for production. Only essential prefixes are added here (e.g. proprietary property value/pairs) and you'll need to set prefixing relative to your desired browser support matrix.
 
 */
 
