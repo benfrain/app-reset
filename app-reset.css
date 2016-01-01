@@ -22,7 +22,9 @@ Be aware that some of these resets have a negative impact on the default usabili
     -webkit-tap-highlight-color: rgba(255,255,255,0);
     /*Older Androids need this instead*/
     -webkit-tap-highlight-color: transparent;
-    /*Not everything needs this but most devs find border-box easier to reason about. @thierrykoblentz wouldn't approve. Sorry Thierry ;)*/
+    /*Not everything needs this but most devs find border-box easier to reason about. @thierrykoblentz wouldn't approve. Sorry Thierry ;)
+    Note: You may prefer to use the inherit method of box-sizing inheritance. Useful if you are likely to mix modules with different box sizing models: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+    */
     box-sizing: border-box;
 }
 
