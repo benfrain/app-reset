@@ -27,7 +27,7 @@ html {
     -webkit-tap-highlight-color: rgba(255,255,255,0);
     /*Older Androids need this instead*/
     -webkit-tap-highlight-color: transparent;
-    /* Most devs find border-box easier to reason about. However by inheriting we can mix box-sizing appraoches.*/
+    /* Most devs find border-box easier to reason about. However by inheriting we can mix box-sizing approaches.*/
     box-sizing: inherit;
 }
 
