@@ -57,6 +57,17 @@ a {
     color: inherit;
 }
 
+/*No bold for b tags by default*/
+b {
+    font-weight: 400;
+}
+
+/*Prevent these elements having italics by default*/
+em,
+i {
+    font-style: normal;
+}
+
 /*Mozilla adds a dotted outline around a tags when they receive tab focus. This removes it. Be aware this is a backwards accessibilty step!*/
 a:focus {
     outline: 0;
