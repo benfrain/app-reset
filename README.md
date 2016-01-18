@@ -14,5 +14,8 @@ Be aware that some of these resets have a negative impact on the default usabili
 ## You'll want to run this through Autoprefixer
 You'll typically need to run this through (https://github.com/postcss/autoprefixer) for production. Only essential prefixes are added here (e.g. proprietary property value/pairs) and you'll need to set prefixing relative to your desired browser support matrix.
 
+## Grab it via NPM
+If you want to install via NPM you can run `npm install app-reset` and it will be available in your node_modules folder. NPM info here: [https://www.npmjs.com/package/app-reset](https://www.npmjs.com/package/app-reset).
+
 ###
 Suggestions? Comment or open an issue or find me at https://twitter.com/benfrain or https://benfrain.com
