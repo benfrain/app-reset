@@ -97,6 +97,11 @@ fieldset {
     font-family: inherit;
 }
 
+/* For IE, we want to remove the default cross ('X') that appears in input fields when a user starts typing - Make sure you add your own! */
+input::-ms-clear {
+    display: none;
+}
+
 /*This switches the default outline off when an input receives focus (really important for users tabbing through with a keyboard) so ensure you put something decent in for your input focus instead!!*/
 input:focus {
     outline: 0;
