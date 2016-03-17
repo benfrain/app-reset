@@ -36,8 +36,9 @@ html {
     box-sizing: inherit;
 }
 
-/* Switching user-select on for inputs specifcially for Safari (see bug link above)*/
-input[type] {
+/* Switching user-select on for inputs and contenteditable specifcially for Safari (see bug link above)*/
+input[type],
+[contenteditable] {
 	user-select: text;
 }
 
