@@ -36,7 +36,7 @@ html {
     box-sizing: inherit;
 }
 
-/* Switching user-select on for inputs and contenteditable specifcially for Safari (see bug link above)*/
+/* Switching user-select on for inputs and contenteditable specifically for Safari (see bug link above)*/
 input[type],
 [contenteditable] {
 	user-select: text;
@@ -77,17 +77,6 @@ i {
 /*Mozilla adds a dotted outline around a tags when they receive tab focus. This removes it. Be aware this is a backwards accessibilty step!*/
 a:focus {
     outline: 0;
-}
-
-/*You may want to comment this one out. I'd rather have all divs default to flex for apps but that might not work for you*/
-div {
-    display: flex;
-}
-
-/*As the rule above, I like all spans and a tags to default to inline-flex. Your mileage may vary*/
-span,
-a {
-    display: inline-flex;
 }
 
 input,
