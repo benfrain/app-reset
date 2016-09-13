@@ -124,3 +124,10 @@ img {
     /*Make images display as a block (UA default is usually inline)*/
     display: block;
 }
+
+/*Removes the default focusring that Mozilla places on select items. From: http://stackoverflow.com/a/18853002/1147859 
+Ensure you set `#000` to the colour you want your text to appear */
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
