@@ -58,12 +58,17 @@ p {
     font-weight: 400;
 }
 
-/* Later browsers can be more easily reset with `all: unset`. However, further declarations on these elements follow for older browsers. REMEMBER accessibility for outline etc!! */
-button,
-a,
-input,
-fieldset {
-  all: unset;
+/* Later browsers can be more easily reset with `all: unset`. However, further declarations on these elements follow for older browsers. REMEMBER accessibility for outlines etc. This undoes a LOT of default UA styling, use with EXTREME caution!! */
+* {
+    all: unset;
+}
+
+/* 
+Thanks to L. David Baron for this:
+https://twitter.com/davidbaron/status/794138427952222210 */
+base, basefont, datalist, head, meta, script, style, title,
+noembed, param, template {
+    display: none;
 }
 
 a {
