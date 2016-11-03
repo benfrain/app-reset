@@ -58,6 +58,14 @@ p {
     font-weight: 400;
 }
 
+/* Later browsers can be more easily reset with `all: unset`. However, further declarations on these elements follow for older browsers. REMEMBER accessibility for outline etc!! */
+button,
+a,
+input,
+fieldset {
+  all: unset;
+}
+
 a {
     text-decoration: none;
     color: inherit;
