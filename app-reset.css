@@ -21,6 +21,8 @@ html {
 
 /*Yes, the universal selector. No, it isn't slow: https://benfrain.com/css-performance-revisited-selectors-bloat-expensive-styles/*/
 * {
+    /* Later browsers can be more easily reset with `all: unset`. However, further declarations on these elements follow for older browsers. REMEMBER accessibility for outlines etc. This undoes a LOT of default UA styling, use with EXTREME caution!! */
+    all: unset;
     /*This prevents users being able to select text. Stops long presses in iOS bringing up copy/paste UI for example. Note below we specifically switch user-select on for inputs for the sake of Safari. Bug here: https://bugs.webkit.org/show_bug.cgi?id=82692*/
     user-select: none;
     /*This gets -webkit specific prefix as it is a non W3C property*/
@@ -56,11 +58,6 @@ p {
     font-size: 1rem;
     /*No bold for h tags unless you want it*/
     font-weight: 400;
-}
-
-/* Later browsers can be more easily reset with `all: unset`. However, further declarations on these elements follow for older browsers. REMEMBER accessibility for outlines etc. This undoes a LOT of default UA styling, use with EXTREME caution!! */
-* {
-    all: unset;
 }
 
 /* 
