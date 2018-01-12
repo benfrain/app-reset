@@ -131,9 +131,9 @@ input[type="number"]::-webkit-outer-spin-button {
     appearance: none;
 }
 
-/*SVG defaults to inline display which I dislike*/
+/*SVG defaults to display: inline which I dislike. Inline-block or inline-flex will render white space on SVG elements in HTML (where you would have defs and symbols) if the container isn't a flex box or the font-size set to 0 to crush the whitespace */
 svg {
-    display: inline-flex;
+    display: block;
 }
 
 img {
