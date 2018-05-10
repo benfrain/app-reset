@@ -17,6 +17,8 @@ Be aware that some of these resets have a negative impact on the default usabili
 /*Hat tip to @thierrykoblentz for this approach: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 html {
     box-sizing: border-box;
+	/* Nicer looking fonts for OS X and iOS */
+	-webkit-font-smoothing: antialiased; 
 }
 
 /*Yes, the universal selector. No, it isn't slow: https://benfrain.com/css-performance-revisited-selectors-bloat-expensive-styles/*/
