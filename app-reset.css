@@ -97,6 +97,7 @@ button {
     background-color: transparent;
     border: 0;
     padding: 0;
+    text-align: inherit;
 }
 
 input,
