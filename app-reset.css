@@ -92,12 +92,14 @@ button:focus {
     outline: 0;
 }
 
+/* The button element tends to get a lot of default styles which we largely undo here. We set text-alignment (usually set to center by UA style sheet) and the font-family to inherit from your own styles instead. */
 button {
     appearance: none;
     background-color: transparent;
     border: 0;
     padding: 0;
     text-align: inherit;
+    font-family: inherit;
 }
 
 input,
