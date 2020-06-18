@@ -155,6 +155,11 @@ select:-moz-focusring {
     text-shadow: 0 0 0 #000;
 }
 
+/* Mozilla also has its own focus inner for buttons which doesn't take into account padding by default. This sets it so padding is included */
+button::-moz-focus-inner {
+    padding: inherit;
+}
+
 /* Switching on box-sizing: border-box by default; toggle this off if you want more granular control */
 body {
 	box-sizing: border-box;
