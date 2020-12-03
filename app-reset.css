@@ -100,6 +100,8 @@ button {
     padding: 0;
     text-align: inherit;
     font-family: inherit;
+    /* Safari adds margin */
+    margin: 0;
 }
 
 input,
