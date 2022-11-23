@@ -1,36 +1,31 @@
 /*
-App reset by Ben Frain @benfrain / benfrain.com
-
-Latest: https://github.com/benfrain/app-reset
+# App reset by Ben Frain @benfrain / benfrain.com
 
 An opinionated set of resets suitable for building web applications.
 
-## Accessibility Notes
+Latest: https://github.com/benfrain/app-reset
+
+# Accessibility Notes
 These resets target HTML elements that typically receive styling defaults by User Agents that I always need to 'undo'.
 
 Be aware that some of these resets have a negative impact on the default usability and accessibility of a web page. Therefore, ensure you add an equivalent accessible style back that matches your project aesthetic.
 
-## You'll want to run this through Autoprefixer You'll typically need to run this through (https://github.com/postcss/autoprefixer) for production. Only essential prefixes are added here (e.g. proprietary property value/pairs) and you'll need to set prefixing relative to your desired browser support matrix.
-
+You may want to run this through Autoprefixer (https://github.com/postcss/autoprefixer) for production. 
 */
 
-/*Hat tip to @thierrykoblentz for this approach: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 html {
+    /*Hat tip to @thierrykoblentz for this approach: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
     box-sizing: border-box;
-	/* Nicer looking fonts for OS X and iOS */
-	-webkit-font-smoothing: antialiased; 
+    --fontStack: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI",
+        Tahoma, Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Open Sans",
+        sans-serif;
+    font-family: var(--fontStack);
 }
 
 /*Yes, the universal selector. No, it isn't slow: https://benfrain.com/css-performance-revisited-selectors-bloat-expensive-styles/*/
 * {
-    /* Later browsers can be more easily reset with `all: unset`. It's commented out by default here as it's pretty heavy handed. However, further declarations on these elements follow for older browsers. If you uncomment this property/value REMEMBER accessibility for outlines etc. This undoes a LOT of default UA styling, use with EXTREME caution!! */
-    /* all: unset; */
-    /*This prevents users being able to select text. Stops long presses in iOS bringing up copy/paste UI for example. Note below we specifically switch user-select on for inputs for the sake of Safari. Bug here: https://bugs.webkit.org/show_bug.cgi?id=82692*/
+    /*This prevents users being able to select text. Stops long presses in iOS bringing up copy/paste UI for example*/
     user-select: none;
-    /*This gets -webkit specific prefix as it is a non W3C property*/
-    -webkit-tap-highlight-color: rgba(255,255,255,0);
-    /*Older Androids need this instead*/
-    -webkit-tap-highlight-color: transparent;
     /* Most devs find border-box easier to reason about. However by inheriting we can mix box-sizing approaches.*/
     box-sizing: inherit;
 }
@@ -38,12 +33,6 @@ html {
 *:before,
 *:after {
     box-sizing: inherit;
-}
-
-/* Switching user-select on for inputs and contenteditable specifically for Safari (see bug link above)*/
-input[type],
-[contenteditable] {
-	user-select: text;
 }
 
 body,
@@ -62,14 +51,6 @@ p {
     font-weight: 400;
 }
 
-/* 
-Thanks to L. David Baron for this:
-https://twitter.com/davidbaron/status/794138427952222210 */
-base, basefont, datalist, head, meta, script, style, title,
-noembed, param, template {
-    display: none;
-}
-
 a {
     text-decoration: none;
     color: inherit;
@@ -86,7 +67,7 @@ i {
     font-style: normal;
 }
 
-/*IMPORTANT: This removes the focus outline for most browsers. Be aware this is a backwards accessibilty step! Mozilla (i.e. Firefox) also adds a dotted outline around a tags and buttons when they receive tab focus which I haven't found an unhacky way of removing.*/
+/*IMPORTANT: This removes the focus outline for most browsers. Be aware this is a backwards accessibilty step!*/
 a:focus,
 button:focus {
     outline: 0;
@@ -100,8 +81,14 @@ button {
     padding: 0;
     text-align: inherit;
     font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
     /* Safari adds margin */
     margin: 0;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 input,
@@ -113,23 +100,13 @@ fieldset {
     /*inputs and fieldset defaults to having a min-width equal to its content in Chrome and Firefox (https://code.google.com/p/chromium/issues/detail?id=560762), we may not want that*/
     min-width: 0;
     /*Reset the font size and family*/
-    font-size: 1rem;
+    font-size: inherit;
     font-family: inherit;
-}
-
-/* For IE, we want to remove the default cross ('X') that appears in input fields when a user starts typing - Make sure you add your own! */
-input::-ms-clear {
-    display: none;
 }
 
 /*This switches the default outline off when an input receives focus (really important for users tabbing through with a keyboard) so ensure you put something decent in for your input focus instead!!*/
 input:focus {
     outline: 0;
-}
-
-input[type="number"] {
-    /*Mozilla shows the spinner UI on number inputs unless we use this:*/
-    -moz-appearance: textfield;
 }
 
 /*Removes the little spinner controls for number type inputs (WebKit browsers/forks only)*/
@@ -150,19 +127,7 @@ img {
     display: block;
 }
 
-/*Removes the default focusring that Mozilla places on select items. From: http://stackoverflow.com/a/18853002/1147859 
-Ensure you set `#000` to the colour you want your text to appear */
-select:-moz-focusring {
-    color: transparent;
-    text-shadow: 0 0 0 #000;
-}
-
-/* Mozilla also has its own focus inner for buttons which doesn't take into account padding by default. This sets it so padding is included */
-button::-moz-focus-inner {
-    padding: inherit;
-}
-
 /* Switching on box-sizing: border-box by default; toggle this off if you want more granular control */
 body {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
