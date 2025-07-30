@@ -10,7 +10,7 @@ These resets target HTML elements that typically receive styling defaults by Use
 
 Be aware that some of these resets have a negative impact on the default usability and accessibility of a web page. Therefore, ensure you add an equivalent accessible style back that matches your project aesthetic.
 
-You may want to run this through Autoprefixer (https://github.com/postcss/autoprefixer) for production. 
+If you are targeting old browsers, you may want to run this through Autoprefixer (https://github.com/postcss/autoprefixer) for production. 
 */
 
 /* Allows height/width animations to auto across document */
@@ -25,6 +25,8 @@ html {
         Tahoma, Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Open Sans",
         sans-serif;
     font-family: var(--fontStack);
+    /* prevents that flash of background on a button in mobile when you tap for too long */
+    -webkit-tap-highlight-color: transparent;
 }
 
 /*Yes, the universal selector. No, it isn't slow: https://benfrain.com/css-performance-revisited-selectors-bloat-expensive-styles/*/
